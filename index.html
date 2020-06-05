@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>My Portfolio</title>
+<!-- jQuery.js�̓ǂݍ��� -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<script>
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>
+</head>
+<body>
+<div class="block parallax-bg top">
+<div class="next"><a href="#main">click</a></div>
+</div>
+<div class="block parallax-bg main" id="main">
+	<div class="menu">
+	<div class="line"><img src="line.png" ></div>
+	<div class="tg1"><a href="#a">Works</a></div>
+	<div class="tg2"><a href="#b">About</a></div>
+	</div>
+</div>
+<div class="block parallax-bg works" id="a">
+	<div class="title">Works</div>
+	<div class="cont">
+    	<div class="ct1"><a href="ct1.html"><img src="box.png"></a></div>
+    	<div class="ct2"><a href="ct2.html"><img src="box.png"></a></div>
+    	<div class="ct3"><a href="ct3.html"><img src="box.png"></a></div>
+    	<div class="ct4"><a href="ct4.html"><img src="box.png"></a></div>
+    	<div class="ct5"><a href="ct5.html"><img src="box.png"></a></div>
+    	<div class="ct6"><a href="ct6.html"><img src="box.png"></a></div>
+    	<div class="ct7"><a href="ct7.html"><img src="box.png"></a></div>
+	</div>
+</div>
+<div class="block parallax-bg about" id="b">
+	<div class="title">About</div>
+	<div class="name"><h1>石川 宇宙</h1></div>
+	<div class="content">
+		情報系の学部に所属している学生です。<br>大学では、情報技術とシステムデザインについて学んでいます。<br>Webエンジニアを目指しています。<br>経験・知識は浅いですが、Web制作は私にとって<br>夢中になれることであり、これからもずっと技術を磨いていきたい<br>と思えることです。
+	</div>
+</div>
+</body>
+</html>
